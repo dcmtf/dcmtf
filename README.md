@@ -1,3 +1,7 @@
+## Multi-way Clustering and Discordance Analysis(DA) through Deep Collective Matrix Tri-Factorization (DCMTF)
+
+Source code and data used in the experiments.
+
 ## 1) Clustering Performance
 
 Commands to reproduce results of Table 1. Hyperparameters set as listed in Appendix F. 
