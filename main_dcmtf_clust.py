@@ -209,12 +209,16 @@ if dataset_id in ["wiki1","wiki2","wiki3","wiki4"]:
     #common params 
     k = 100
     kf = None #0.000001
-    num_layers = 1
+    num_layers = 2
     e_actf = "tanh"
     k_neigh = 100
     #
     learning_rate = 1e-4
-    weight_decay = 1e-4 #wiki1 1e-3, wiki2-4 1e-4
+    if dataset_id in ["wiki1"]:
+        weight_decay = 1e-3
+    else:
+        weight_decay = 1e-4
+    #weight_decay = 1e-4 #wiki1 1e-3, wiki2-4 1e-4
     convg_thres = -1e-3 #-1e-3
     max_epochs = 5000 
     #max_epochs = 50
