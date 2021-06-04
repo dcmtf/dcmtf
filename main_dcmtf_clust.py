@@ -92,7 +92,7 @@ dataset_id = sys.argv[1]
 # num_batches = int(sys.argv[3])
 #is_rand_batch_train_temp = int(sys.argv[4])
 
-gpu_id = 0
+gpu_id = 3
 is_gpu = True
 # adr_data_version_name = None
 # if len(sys.argv) == 6:
@@ -507,7 +507,7 @@ elif dataset_id == "pubmed_heuristic":
     learning_rate = 1e-4
     weight_decay = 1e-3
     convg_thres = -1e-3 #-1e-3
-    max_epochs = 5000 #9000 #9000 for v2 of pubmed heuristic data
+    max_epochs = 2000 #9000 #9000 for v2 of pubmed heuristic data
     #max_epochs = 50
     #
     is_pretrain = False #False
@@ -1168,6 +1168,40 @@ if dataset_id in ["pubmed"]:
             is_train = False
         print("###")
         print("Cur pubmed run#: ",i+1)
+        print("is_train: ",is_train)
+        print("###")
+        #
+        dcmtf_instance = dcmtf(G, X_data, X_data_bef_pp, X_data_size_fac, X_meta, X_dtype,\
+                k, kf, num_layers, e_actf, dict_num_clusters,\
+                learning_rate, weight_decay, convg_thres, max_epochs,\
+                is_pretrain, learning_rate_pretrain, weight_decay_pretrain, convg_thres_pretrain, max_epochs_pretrain,\
+                mini_batch_size_frac, num_batches, dict_e_loss_weight, dict_loss_weight,\
+                dict_e_size, y_val_dict,\
+                is_gpu, is_train, is_load_init, is_rand_batch_train, \
+                model_dir=out_dir)
+        #
+        dcmtf_instance.fit()
+        #
+        dcmtf_instance.persist_out(out_dir)
+        print("#")
+        print("Calculating model performance: ")
+        print("#")
+        dict_ari_u = dcmtf_instance.calc_kmeans_ari_u()
+        dict_ari_c = dcmtf_instance.calc_kmeans_ari_c()
+        print("###")
+elif dataset_id in ["pubmed_heuristic"]:
+    num_runs = 2 #hyperparameter
+    print("#####")
+    print("dataset_id: ",dataset_id)
+    print("###")
+    print("num_runs: ",num_runs)
+    print("###")
+    for i in np.arange(num_runs):
+        if i+1 > 1 :
+            is_train = False
+            learning_rate = 1e-5
+        print("###")
+        print("Cur pubmed DA run#: ",i+1)
         print("is_train: ",is_train)
         print("###")
         #
