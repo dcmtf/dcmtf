@@ -65,7 +65,7 @@ Steps to reproduce results of Table 2:
 2. `da/wiki/"2 - DA wiki - DFMF.ipynb"`
 
 ##### *Note*:
-To repeat this experiment for other wiki datasets wiki2/wiki3/wiki4: Run DCMTF for the required wiki[run_no] in `Step 1` and change the variable `run_no` accordingly to 2/3/4 in the ipython before running them in `step 2`. 
+To repeat this experiment for other wiki datasets *wiki2/wiki3/wiki4*: Run DCMTF for the required wiki[run_no] in `Step 1` and change the variable `run_no` accordingly to *2/3/4* in the ipython notebook before running them in `step 2`. 
 
 ##### Outputs:
 
@@ -86,22 +86,25 @@ Steps to obtain the 2 "cleaned" versions of the PubMed HIN from the `Original HI
 
 	`da/pubmed/"DA - HIN - step 1 - find high scoring and random cluster chains.ipynb"`
 
-3. Open using Jupyter and run all cells. Filters E and R from `link.data` file of `Original HIN` to produce the `link.data` files for `DA-Cleaned` and `Rand-Cleaned` respectively. 
+3. Open using Jupyter and run all cells. Filters E and R from `link.data` file of `Original HIN` to produce the cleaned up `link.data` files for `DA-Cleaned` and `Rand-Cleaned` in the folders `dcmtf/out_clust/pubmed_heuristic/version_2/cc/PubMed_da_link` and `dcmtf/out_clust/pubmed_heuristic/version_2/cc/PubMed_rand_link` respectively.
 	
 	`da/pubmed/"DA - HIN - step 2 - filter and obtain cleaned network.ipynb"`
 
-4. Make copy of `Original HIN` data folder `PubMed_orig`, replace the filtered version of `link.data` to create "cleaned" data folders: `PubMed_da` and `PubMed_rand` 	
+4. Make copy of *Original HIN* data folder `PubMed_orig` to created data folders `PubMed_da` and `PubMed_rand` for *DA-Cleaned HIN* and *Rand-Cleaned HIN*. Replace `link.data` in these folders with the corresponding the filtered versions `cc/PubMed_da_link/link.dat` and `cc/PubMed_rand_link/link.dat`
+
+#### *Note:* 
+The folder `/dcmtf/data_hin` contains the filtered version of the HINs `PubMed_orig`, `PubMed_da`, `PubMed_rand` used in our experimentation i.e. the output from the previous steps.
 
 
 #### HIN2Vec, Metapath2Vec + DA
 
-Steps to learn the HIN2Vec/Metapath2Vec embeddings for `PubMed_orig`, and `PubMed_da` and `PubMed_rand` obtain results on the two benchmark tasks (node classification and link prediction) shown in Table 3:
+Steps to learn the HIN2Vec/Metapath2Vec embeddings for the HINs `PubMed_orig`, `PubMed_da`, `PubMed_rand` and obtain results on the two benchmark tasks (node classification and link prediction) shown in Table 3:
 
 1. Copy the contents of `/data_hin/PubMed_orig/*` to `/HNE-master/Data/PubMed`
 2. Do `cd HNE-master/Transform` and run `$sh transform.sh` 
-3. Do `cd HNE-master/Model/HIN2Vec` and run `$ sh run.sh` to learn the HIN2Vec embeddings
-4. Do `cd HNE-master/Model/metapath2vec-ESim` and run `$ sh run.sh` to learn the Metapath2Vec embeddings
-5. Do `cd HNE-master/Evaluate` and run `$ sh evaluate.sh` to obtain perform benchmark tasks and record results at: `/HNE-master/Data/PubMed/record.dat`
+3. Do `cd HNE-master/Model/HIN2Vec` and run `$sh run.sh` to learn the HIN2Vec embeddings
+4. Do `cd HNE-master/Model/metapath2vec-ESim` and run `$sh run.sh` to learn the Metapath2Vec embeddings
+5. Do `cd HNE-master/Evaluate` and run `$sh evaluate.sh` to obtain perform benchmark tasks and record results at: `/HNE-master/Data/PubMed/record.dat`
 6. Repeat the above steps 1 to 5 for `PubMed_da` and `PubMed_rand`
 
 More details about the baselines HIN2Vec, Metapath2Vec execution can be found [here](https://github.com/yangji9181/HNE)
