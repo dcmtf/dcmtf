@@ -44,7 +44,7 @@ Steps to reproduce results of Table 2:
 
 `Step 1:`  Obtain U, I and A using DCMTF/CFRM/DFMF for dataset "wiki1"
 
-`Step 2:`  Perform DA using the corresponding ipy notebook. Open using Jupyter and run all cells
+`Step 2:`  Perform DA using the corresponding ipy notebook. Open using Jupyter and run all cells. 
 
 #### DCMTF + DA
 
@@ -63,6 +63,9 @@ Steps to reproduce results of Table 2:
 1. `$python -u main_dfmf_clust.py "wiki1" &> out.log`
 
 2. `da/wiki/"2 - DA wiki - DFMF.ipynb"`
+
+##### *Note*:
+To repeat this experiment for other wiki datasets wiki2/wiki3/wiki4: Run DCMTF for the required wiki[run_no] in `Step 1` and change the variable `run_no` accordingly to 2/3/4 in the ipython before running them in `step 2`. 
 
 ##### Outputs:
 
@@ -95,10 +98,10 @@ Steps to obtain the 2 "cleaned" versions of the PubMed HIN from the `Original HI
 Steps to learn the HIN2Vec/Metapath2Vec embeddings for `PubMed_orig`, and `PubMed_da` and `PubMed_rand` obtain results on the two benchmark tasks (node classification and link prediction) shown in Table 3:
 
 1. Copy the contents of `/data_hin/PubMed_orig/*` to `/HNE-master/Data/PubMed`
-2. Run `$ sh HNE-master/Transform/transform.sh` 
-3. Run `$ sh HNE-master/Model/HIN2Vec/run.sh` to learn the HIN2Vec embeddings
-4. Run `$ sh HNE-master/Model/metapath2vec-ESim/run.sh` to learn the Metapath2Vec embeddings
-5. Run `$ sh HNE-master/Evaluate/evaluate.sh` to obtain perform benchmark tasks and record results at: `/HNE-master/Data/PubMed/record.dat`
+2. Do `cd HNE-master/Transform` and run `$sh transform.sh` 
+3. Do `cd HNE-master/Model/HIN2Vec` and run `$ sh run.sh` to learn the HIN2Vec embeddings
+4. Do `cd HNE-master/Model/metapath2vec-ESim` and run `$ sh run.sh` to learn the Metapath2Vec embeddings
+5. Do `cd HNE-master/Evaluate` and run `$ sh evaluate.sh` to obtain perform benchmark tasks and record results at: `/HNE-master/Data/PubMed/record.dat`
 6. Repeat the above steps 1 to 5 for `PubMed_da` and `PubMed_rand`
 
 More details about the baselines HIN2Vec, Metapath2Vec execution can be found [here](https://github.com/yangji9181/HNE)

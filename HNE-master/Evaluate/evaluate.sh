@@ -15,7 +15,7 @@ supervised='False' # choose 'True' or 'False'
 
 #ConvE HIN2Vec R-GCN 
 #metapath2vec-ESim HIN2Vec
-for model in HIN2Vec
+for model in HIN2Vec metapath2vec-ESim
 do
 	python evaluate.py -dataset ${dataset} -model ${model} -task ${task} -attributed ${attributed} -supervised ${supervised}
 done
