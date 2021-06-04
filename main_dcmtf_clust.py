@@ -92,7 +92,7 @@ dataset_id = sys.argv[1]
 # num_batches = int(sys.argv[3])
 #is_rand_batch_train_temp = int(sys.argv[4])
 
-gpu_id = 3
+gpu_id = 0
 is_gpu = True
 # adr_data_version_name = None
 # if len(sys.argv) == 6:
