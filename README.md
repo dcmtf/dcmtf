@@ -90,7 +90,7 @@ Steps to obtain the 2 "cleaned" versions of the PubMed HIN from the `Original HI
 	
 	`da/pubmed/"DA - HIN - step 2 - filter and obtain cleaned network.ipynb"`
 
-4. Make copy of *Original HIN* data folder `PubMed_orig` to created data folders `PubMed_da` and `PubMed_rand` for *DA-Cleaned HIN* and *Rand-Cleaned HIN*. Replace `link.data` in these folders with the corresponding the filtered versions `cc/PubMed_da_link/link.dat` and `cc/PubMed_rand_link/link.dat`
+4. Make copy of *Original HIN* data folder `PubMed_orig` to created data folders `PubMed_da` and `PubMed_rand` for *DA-Cleaned HIN* and *Rand-Cleaned HIN*. Replace `link.data` in these folders with the corresponding filtered versions `cc/PubMed_da_link/link.dat` and `cc/PubMed_rand_link/link.dat`
 
 #### *Note:* 
 The folder `/dcmtf/data_hin` contains the filtered version of the HINs `PubMed_orig`, `PubMed_da`, `PubMed_rand` used in our experimentation i.e. the output from the previous steps.
