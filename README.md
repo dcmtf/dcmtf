@@ -55,6 +55,7 @@ In main_*.py, set `is_gpu` to `False` to run using CPU and change `gpu_id` as re
 ## 3) 20NG Dataset - Appendix E
 
 `$ cd 20ng`
+
 `$ python -u main_dcmtf_clust.py 20ng &> out.log`
 
 
