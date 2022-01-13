@@ -108,7 +108,7 @@ is_rand_batch_train = True
 # else:
 #     is_rand_batch_train = False
 
-assert dataset_id in ["wiki1","wiki2","wiki3","wiki4","pubmed", "freebase","genephene","pubmed_heuristic","20ng"],"Unknown dataset_id: "+str(dataset_id) #sample "wiki5" unused
+assert dataset_id in ["20ng"],"Unknown dataset_id: "+str(dataset_id) #sample "wiki5" unused
 print("dataset_id: ",dataset_id)
 
 # if dataset_id in ["freebase"]:
